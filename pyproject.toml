@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "poei-projet"
+version = "0.1.0"
+description = ""
+authors = ["Lucie Hussonnois <lucie.hussonnois@gmail.com>"]
+
+[tool.poetry.scripts]
+start_consumer_covid = 'poei_projet.datagovcovid_kafka_consume:run_covid'
+start_consumer_echeance = 'poei_projet.datagovcovid_kafka_consume:run_echeance'
+start_producer = 'poei_projet.datagovcovid_kafka_produce:run'
+
+[tool.poetry.dependencies]
+python = "^3.8"
+confluent-kafka = "^1.4.0"
+elasticsearch = "^7.0.0"
+requests = "^2.23.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
