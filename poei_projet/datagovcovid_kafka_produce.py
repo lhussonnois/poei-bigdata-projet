@@ -44,7 +44,8 @@ def run():
 	collect_csv_to_kafka(producer, "DataGouvCovid", CSV_URL)
 	producer.flush()
 
-	JSON_URL = 'https://www.data.gouv.fr/fr/datasets/r/46be802e-e802-4931-87d9-6a649452c9fd'
+	##JSON_URL = 'https://www.data.gouv.fr/fr/datasets/r/46be802e-e802-4931-87d9-6a649452c9fd'
+	JSON_URL = 'https://raw.githubusercontent.com/lhussonnois/poei-bigdata-projet/master/data-gov/mesures-exceptionnelles-covid-19-reports-par-departement-x-grand-secteur.json'
 	r = requests.get(JSON_URL)
 	for record in r.json(): # itère sur chaque objet, ici on modifie un peu le document json pour avoir tout au même niveau
 		data = record['fields']
